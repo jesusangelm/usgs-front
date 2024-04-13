@@ -49,7 +49,7 @@ const NewComment = () => {
       headers: headers,
     }
 
-    fetch(`http://localhost:3000/api/features/${id}/comments`, requestOptions)
+    fetch(`${import.meta.env.VITE_USGS_API_URL}/api/features/${id}/comments`, requestOptions)
       .then((response) => response.json())
       .then((data) => {
         if (data.errors) {

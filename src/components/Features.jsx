@@ -19,7 +19,7 @@ const Features = () => {
       headers: headers,
     }
 
-    fetch(`http://localhost:3000/api/features?`, requestOptions)
+    fetch(`${import.meta.env.VITE_USGS_API_URL}/api/features`, requestOptions)
       .then((response) => response.json())
       .then((respData) => {
         setFeatures(respData.data)
